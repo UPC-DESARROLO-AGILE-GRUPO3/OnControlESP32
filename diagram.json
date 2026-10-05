@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "author": "OnControl",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp32",
+      "top": 6,
+      "left": 2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "bpm",
+      "top": -76,
+      "left": 264,
+      "attrs": { "value": "380" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "spo2",
+      "top": 25,
+      "left": 264,
+      "attrs": { "value": "850" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "temperature",
+      "top": 126,
+      "left": 264,
+      "attrs": { "value": "430" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "send",
+      "top": 226,
+      "left": 252,
+      "attrs": { "color": "green", "label": "ENVIAR" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "status",
+      "top": -85,
+      "left": -91,
+      "attrs": { "color": "blue", "label": "ENVIO" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "resistor",
+      "top": -28,
+      "left": -91,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "bpm:SIG", "esp32:D34", "green", [] ],
+    [ "bpm:VCC", "esp32:3V3", "red", [] ],
+    [ "bpm:GND", "esp32:GND.1", "black", [] ],
+    [ "spo2:SIG", "esp32:D35", "blue", [] ],
+    [ "spo2:VCC", "esp32:3V3", "red", [] ],
+    [ "spo2:GND", "esp32:GND.1", "black", [] ],
+    [ "temperature:SIG", "esp32:D32", "orange", [] ],
+    [ "temperature:VCC", "esp32:3V3", "red", [] ],
+    [ "temperature:GND", "esp32:GND.1", "black", [] ],
+    [ "send:1.l", "esp32:D4", "green", [] ],
+    [ "send:2.l", "esp32:GND.1", "black", [] ],
+    [ "esp32:D2", "status:A", "blue", [] ],
+    [ "status:C", "resistor:1", "black", [] ],
+    [ "resistor:2", "esp32:GND.1", "black", [] ]
+  ],
+  "serialMonitor": { "display": "always", "newline": "lf" },
+  "dependencies": {}
+}

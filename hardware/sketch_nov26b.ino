@@ -11,13 +11,13 @@
 // ============================================
 const char* WIFI_SSID     = "WIFI";
 const char* WIFI_PASSWORD = "CONTRASEÑA";
-const char* API_URL       = "https://carrie-resorptive-lorelei.ngrok-free.dev/OnControl/parameters";
+const char* API_URL       = "https://edgeservice.onrender.com/OnControl/parameters";
 
 // ============================================
 // CONFIGURACION DEL DISPOSITIVO (CREDENCIALES)
 // ============================================
 const char* DEVICE_ID = "smart-band-001";    // ID unico del dispositivo
-const char* API_KEY   = "test-api-key-123";  // API Key asignada a este device
+const char* API_KEY   = "oncontrol-grupo2-demo-key";  // API Key de la demo academica
 
 // ============================================
 // ACTUADORES
